@@ -7,6 +7,10 @@ import {
     Link
 } from "react-router-dom";
 
+import { Home } from "./Home/Home";
+import { About } from './About/About';
+import { Users } from "./Users/Users";
+
 
 export const Root = () => {
     return (
@@ -26,8 +30,15 @@ export const Root = () => {
                     </ul>
                 </nav>
                 <Switch>
-
-                    
+                    <Route path="/about">
+                        <About />
+                    </Route>
+                    <Route path="/users">
+                        <Users />
+                    </Route>
+                    <Route path="/">
+                        <Home />
+                    </Route>
                 </Switch>
             </div>
         </Router>
