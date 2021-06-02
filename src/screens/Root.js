@@ -10,22 +10,35 @@ import {
 import { Home } from "./Home/Home";
 import { About } from './About/About';
 import { Users } from "./Users/Users";
+import { Primary } from '../components/Buttons/Primary';
 
 
 export const Root = () => {
     return (
         <Router>
-            <div>
+            <div className="px-8 max-w-screen-lg">
                 <nav>
-                    <ul>
+                    <ul className="flex pb-8">
                         <li>
-                            <Link to="/">Home</Link>
+                            <Link to="/">
+                                <Primary>
+                                    Home
+                                </Primary>
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/about">About</Link>
+                            <Link to="/about">
+                                <Primary>
+                                    About
+                                </Primary>
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/users">Users</Link>
+                            <Link to="/users">
+                                <Primary>
+                                    Users
+                                </Primary>
+                            </Link>
                         </li>
                     </ul>
                 </nav>
