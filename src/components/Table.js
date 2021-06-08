@@ -17,17 +17,14 @@ export const Table = ({ rows, columnTitles }) => {
                 </thead>
                 <tbody className="text-gray-600 text-sm font-light">
                     {
-                        rows.map((item) => {
+                        rows.map((item, i) => {
                             return <tr key={item.id} className="border-b border-gray-200 hover:bg-gray-100">
-                                <td className="py-3 px-6 text-left whitespace-nowrap font-semibold whitespace-pre-wrap">{item.name}</td>
-                                <td className="py-3 px-6 text-center whitespace-nowrap flex justify-center">
-                                    <img className="rounded-full h-16 w-16 max-w-min" src={item.image} alt={item.name} />
-                                </td>
-                                <td className="py-3 px-6 text-left whitespace-nowrap">${item.price}</td>
-                                <td className="py-3 px-6 text-left whitespace-nowrap">{item.totalSales}</td>
+                                <td className="py-3 px-6 text-left whitespace-nowrap">{item.id}</td>
+                                <td className="py-3 px-6 text-left whitespace-nowrap font-semibold whitespace-pre-wrap">{item.title}</td>
+                                <td className="py-3 px-6 text-left whitespace-nowrap">{item.userId}</td>
                                 <td className="py-3 px-6 text-center">
-                                    <span className={`select-none rounded-full py-1 px-2 text-xs font-semibold ${item.status ? "bg-green-300 text-green-700" : "bg-red-300 text-red-700"}`}>
-                                        {item.status ? "Active" : "Inactive"}
+                                    <span className={`select-none rounded-full py-1 px-2 text-xs font-semibold ${item.completed ? "bg-green-300 text-green-700" : "bg-red-300 text-red-700"}`}>
+                                        {item.completed ? "Completed" : "Incompleted"}
                                     </span>
                                 </td>
                             </tr>

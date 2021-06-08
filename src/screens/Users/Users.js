@@ -4,11 +4,10 @@ import { useFetch } from '../../hooks/useFetch';
 
 export const Users = () => {
     const columnTitles = [
-        "title 1",
-        "title 2",
-        "title 3",
-        "title 4",
-        "title 5"
+        "Id",
+        "Task",
+        "UserId",
+        "Status",
     ];
 
 
@@ -54,7 +53,7 @@ export const Users = () => {
             <h1 className="pb-4">Users</h1>
             {data === null ?
                 <h2>Loading ...</h2> :
-                <Table columnTitles={columnTitles} rows={items} />
+                <Table columnTitles={columnTitles} rows={data} />
             }
 
 
