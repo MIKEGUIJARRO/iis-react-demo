@@ -4,7 +4,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    NavLink
 } from "react-router-dom";
 
 import { Home } from "./Home/Home";
@@ -18,27 +19,27 @@ export const Root = () => {
         <Router>
             <div className="px-8 max-w-screen-lg">
                 <nav>
-                    <ul className="flex pb-8">
+                    <ul className="flex py-4">
                         <li>
-                            <Link to="/">
+                            <NavLink to="/" activeClassName="">
                                 <Primary>
                                     Home
                                 </Primary>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/about">
+                            <NavLink to="/about">
                                 <Primary>
                                     About
                                 </Primary>
-                            </Link>
+                            </NavLink>
                         </li>
                         <li>
-                            <Link to="/users">
+                            <NavLink to="/users">
                                 <Primary>
                                     Users
                                 </Primary>
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>

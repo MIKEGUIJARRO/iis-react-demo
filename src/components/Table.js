@@ -1,14 +1,17 @@
 import React from 'react'
 
-export const Table = ({ rows, cols }) => {
-    const hola = ``;
+export const Table = ({ rows, columnTitles }) => {
     return (
         <div>
             <table className="w-full table-auto overflow-x-auto">
                 <thead>
                     <tr className="bg-gray-200 text-gray-600 text-sm leading-normal">
-                        {cols.map((title, i, array) => {
-                            return <th className={`py-3 px-6 text-left ${i === 0 && "rounded-tl-lg"} ${i === array.length - 1 && "rounded-tr-lg"}`}>{title}</th>
+                        {columnTitles.map((title, i, array) => {
+                            return <th className={
+                                `py-3 px-6 text-left 
+                                ${i === 0 && "rounded-tl-lg"} 
+                                ${i === array.length - 1 && "rounded-tr-lg"}`}>
+                                {title}</th>
                         })}
                     </tr>
                 </thead>
@@ -27,21 +30,6 @@ export const Table = ({ rows, cols }) => {
                                         {item.status ? "Active" : "Inactive"}
                                     </span>
                                 </td>
-                                <td className="py-3 px-6 text-center">
-                                    <div className="flex justify-between items-center space-x-1">
-                                        {/* <button className="focus:outline-none transition duration-100 ease-in-out transform hover:scale-125">
-                                            <Eye size={22} />
-                                        </button>
-                                        <button className="focus:outline-none transition duration-100 ease-in-out transform hover:scale-125">
-                                            <Edit2 size={22} />
-                                        </button>
-                                        <button className="focus:outline-none transition duration-100 ease-in-out transform hover:scale-125 hover:text-red-400">
-                                            <Trash size={22} />
-                                        </button> */}
-                                    </div>
-
-                                </td>
-
                             </tr>
                         })
                     }

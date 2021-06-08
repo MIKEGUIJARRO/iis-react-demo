@@ -1,5 +1,6 @@
 import React from 'react'
 import { Table } from '../../components/Table'
+import { useFetch } from '../../hooks/useFetch';
 
 export const Users = () => {
     const columnTitles = [
@@ -10,7 +11,7 @@ export const Users = () => {
         "title 5"
     ];
 
-    
+
     const items = [
         {
             id: 1,
@@ -44,12 +45,19 @@ export const Users = () => {
             totalSales: 12524,
             status: true,
         }
-    ]
+    ];
 
+    const { data } = useFetch("https://jsonplaceholder.typicode.com/todos");
+    console.log(data);
     return (
         <div>
             <h1 className="pb-4">Users</h1>
-            <Table cols={columnTitles} rows={items} />
+            {data === null ?
+                <h2>Loading ...</h2> :
+                <Table columnTitles={columnTitles} rows={items} />
+            }
+
+
         </div>
     )
 }
