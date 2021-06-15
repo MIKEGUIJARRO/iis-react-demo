@@ -4,13 +4,13 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
     NavLink
 } from "react-router-dom";
 
 import { Home } from "./Home/Home";
 import { About } from './About/About';
 import { Users } from "./Users/Users";
+import { Mail } from "./Mail/Mail";
 import { Primary } from '../components/Buttons/Primary';
 
 
@@ -41,6 +41,13 @@ export const Root = () => {
                                 </Primary>
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/mail">
+                                <Primary>
+                                    Mail
+                                </Primary>
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
                 <Switch>
@@ -49,6 +56,9 @@ export const Root = () => {
                     </Route>
                     <Route path="/users">
                         <Users />
+                    </Route>
+                    <Route path="/mail">
+                        <Mail />
                     </Route>
                     <Route path="/">
                         <Home />
